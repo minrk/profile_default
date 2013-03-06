@@ -4,3 +4,5 @@ db
 pid
 log
 security
+history.sqlite
+tasks.db
