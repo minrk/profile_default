@@ -1,0 +1,34 @@
+div.cell.selected {
+  border: 1px solid white;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, rgb(200,200,200)),
+    color-stop(1, rgb(255,255,255))
+  );
+  background-size: 80px;
+  background-repeat: repeat-y;
+}
+div#notebook {
+  padding: 0px 120px 0px 50px;
+}
+
+body {
+  font-family: Optima, Century, "Minion Pro", serif;
+}
+
+div.CodeMirror {
+  font-family: "Source Code Pro", source-code-pro, "Anonymous Pro", Consolas, Inconsolata, monospace;
+}
+
+div.text_cell_render {
+  color: #333333;
+}
+
+.rendered_html h1, .rendered_html h2, .rendered_html h3, .rendered_html h4, .rendered_html h5 {
+/*  line-height: 1em;*/
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #aaa;
+}
