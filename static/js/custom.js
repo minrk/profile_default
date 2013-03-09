@@ -68,9 +68,8 @@ setTimeout(function() {
 
 // set initial interval to 5 minutes
 
-console.log("scheduling autosave every 300 ms");
-IPython.notebook.save_notebook();
+console.log("scheduling autosave every 300 s");
 IPython.autosave_extension_interval = setInterval(function() {
     console.log("autosave");
     IPython.notebook.save_notebook();
-}, 300);
+}, 300000);
