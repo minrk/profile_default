@@ -14,8 +14,15 @@ div#notebook {
   padding: 0px 120px 0px 50px;
 }
 
+.ui-widget {
+  font-family: Avenir, Century, Verdana, Arial, sans-serif;
+}
+
 body {
-  font-family: Optima, Century, "Minion Pro", serif;
+  /* sans-serif fonts I like */
+  font-family: "Proxima Nova", proxima-nova, "Century Gothic", Optima, "Frutiger LT Std", "Univers LT Std", sans-serif;
+  /* serif fonts I like */
+/*  font-family: Century, Baskerville, "Adobe Garamond Pro", "Minion Pro", serif;*/
 }
 
 div.CodeMirror {
