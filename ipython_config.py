@@ -40,12 +40,6 @@ c = get_config()
 # A list of dotted module names of IPython extensions to load.
 # c.InteractiveShellApp.extensions = []
 c.InteractiveShellApp.extensions = ['editmate', 'timers', 'gist', 'autosave']
-try:
-    import matplotlib
-except ImportError:
-    pass
-else:
-    c.InteractiveShellApp.extensions.append('retina')
 
 
 # Run the module as a script.

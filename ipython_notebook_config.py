@@ -1,6 +1,12 @@
 # Configuration file for ipython-notebook.
 
 c = get_config()
+# try:
+#     import matplotlib
+# except ImportError:
+#     pass
+# else:
+#     c.InteractiveShellApp.extensions.append('retina')
 
 #------------------------------------------------------------------------------
 # NotebookApp configuration
