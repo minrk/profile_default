@@ -41,6 +41,13 @@ c = get_config()
 # c.InteractiveShellApp.extensions = []
 c.InteractiveShellApp.extensions = ['editmate', 'timers', 'gist', 'autosave']
 
+try:
+    import msgpack
+except ImportError:
+    pass
+else:
+    c.Session.packer = 'msgpack.packb'
+    c.Session.unpacker = 'msgpack.unpackb'
 
 # Run the module as a script.
 # c.InteractiveShellApp.module_to_run = ''
