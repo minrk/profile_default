@@ -1,3 +1,17 @@
+/* for presentations
+
+body {
+  font-size: 18px;
+}
+div.list_item {
+  height: 30px;
+}
+.toolbar select {
+  height: 30px;
+}
+
+/* the real stuff */
+
 div.cell.selected {
   border: 1px solid white;
   background-image: -webkit-gradient(
