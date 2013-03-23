@@ -99,14 +99,21 @@ c.NotebookApp.open_browser = False
 # c.NotebookApp.password = u''
 
 import getpass
-import keyring
 from IPython.lib import passwd
 
+try:
+    import keyring
+except:
+    keyring = None
+
 user = getpass.getuser()
-hashed_password = keyring.get_password('IPython Notebook', user)
+hashed_password = None
+if keyring:
+    hashed_password = keyring.get_password('IPython Notebook', user)
 if hashed_password is None:
     hashed_password = passwd()
-    keyring.set_password('IPython Notebook', user, hashed_password)
+    if keyring:
+        keyring.set_password('IPython Notebook', user, hashed_password)
 
 c.NotebookApp.password = hashed_password
 
