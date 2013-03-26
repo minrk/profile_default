@@ -103,19 +103,16 @@ from IPython.lib import passwd
 
 try:
     import keyring
-except:
-    keyring = None
-
-user = getpass.getuser()
-hashed_password = None
-if keyring:
+except ImportError:
+    print("No keyring")
+else:
+    user = getpass.getuser()
     hashed_password = keyring.get_password('IPython Notebook', user)
-if hashed_password is None:
-    hashed_password = passwd()
-    if keyring:
+    if hashed_password is None:
+        hashed_password = passwd()
         keyring.set_password('IPython Notebook', user, hashed_password)
 
-c.NotebookApp.password = hashed_password
+    c.NotebookApp.password = hashed_password
 
 # Wether to use Browser Side less-css parsing instead of compiled css version in
 # templates that allows it. This is mainly convenient when working on the less
