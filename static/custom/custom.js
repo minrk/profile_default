@@ -46,11 +46,14 @@ IPython.ext_gist_notebook = function () {
 };
 
 setTimeout(function() {
+    if ( !IPython.toolbar ) {
+        return;
+    }
     if ($("#gist_notebook").length == 0) {
         IPython.toolbar.add_buttons_group([
             {
                 'label'   : 'Share Notebook as gist',
-                'icon'    : 'ui-icon-share',
+                'icon'    : 'icon-share',
                 'callback': IPython.ext_gist_notebook,
                 'id'      : 'gist_notebook'
             },
