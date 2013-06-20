@@ -14,18 +14,18 @@ div.list_item {
 
 div.cell.selected {
   border: 1px solid white;
+  border-right: 1px solid rgb(200,210,220);
   background-image: -webkit-gradient(
     linear,
     left top,
     right top,
-    color-stop(0, rgb(200,200,200)),
-    color-stop(1, rgb(255,255,255))
+    color-stop(0, rgb(200,210,220)),
+    color-stop(0.5, rgb(255,255,255))
   );
   background-size: 80px;
   background-repeat: repeat-y;
 }
 div#notebook {
-  padding: 0px 120px 0px 50px;
 }
 
 .ui-widget {
