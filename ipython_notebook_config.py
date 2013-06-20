@@ -99,6 +99,7 @@ c.NotebookApp.open_browser = False
 # c.NotebookApp.password = u''
 
 import getpass
+import os
 from IPython.lib import passwd
 
 try:
@@ -113,6 +114,23 @@ else:
         keyring.set_password('IPython Notebook', user, hashed_password)
 
     c.NotebookApp.password = hashed_password
+
+
+# get cookie secret from a file
+
+# workaround for __file__ missing in < 1.0
+try:
+    __file__
+except NameError:
+    __file__ = os.path.expanduser('~/.ipython/profile_default/ipython_notebook_config.py')
+
+cookie_secret_file = os.path.join(os.path.dirname(__file__), "cookie_secret")
+if not os.path.exists(cookie_secret_file):
+    with open(cookie_secret_file, 'wb') as f:
+        f.write(os.urandom(1024))
+
+with open(cookie_secret_file, 'rb') as f:
+    c.NotebookApp.cookie_secret = f.read()
 
 # Wether to use Browser Side less-css parsing instead of compiled css version in
 # templates that allows it. This is mainly convenient when working on the less
