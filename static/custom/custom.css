@@ -25,6 +25,18 @@ div.cell.selected {
   background-size: 80px;
   background-repeat: repeat-y;
 }
+div.cell.command_mode {
+  border: 1px solid white;
+  border-right: 1px solid rgb(00,80,100);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, rgb(00,80,100)),
+    color-stop(0.5, rgb(255,255,255))
+  );
+}
+
 div#notebook {
 }
 
