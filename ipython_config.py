@@ -39,7 +39,7 @@ c = get_config()
 
 # A list of dotted module names of IPython extensions to load.
 # c.InteractiveShellApp.extensions = []
-c.InteractiveShellApp.extensions = ['timers', 'gist']
+c.InteractiveShellApp.extensions = ['timers', 'gist', 'namespaces']
 
 try:
     import msgpack
