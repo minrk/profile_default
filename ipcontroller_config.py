@@ -260,8 +260,8 @@ else:
 # SQLiteDB: SQLite MongoDB : use MongoDB DictDB  : in-memory storage (fastest,
 # but be mindful of memory growth of the Hub) NoDB    : disable database
 # altogether (default)
-# c.HubFactory.db_class = 'NoDB'
-c.HubFactory.db_class = 'IPython.parallel.controller.dictdb.DictDB'
+c.HubFactory.db_class = 'NoDB'
+# c.HubFactory.db_class = 'IPython.parallel.controller.dictdb.DictDB'
 
 # IP on which to listen for monitor messages. [default: loopback]
 # c.HubFactory.monitor_ip = '127.0.0.1'
@@ -281,8 +281,8 @@ c.HubFactory.db_class = 'IPython.parallel.controller.dictdb.DictDB'
 # queue.
 
 # select the task scheduler scheme  [default: Python LRU] Options are: 'pure',
-# 'lru', 'plainrandom', 'weighted', 'twobin','leastload'
-# c.TaskScheduler.scheme_name = 'leastload'
+# 'lru', 'plainrandom', 'weighted', 'twobin', 'leastload'
+c.TaskScheduler.scheme_name = 'lru'
 
 # specify the High Water Mark (HWM) for the downstream socket in the Task
 # scheduler. This is the maximum number of allowed outstanding tasks on each
