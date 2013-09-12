@@ -45,23 +45,20 @@ IPython.ext_gist_notebook = function () {
     IPython.notebook.kernel.execute(cmd, {'output' : IPython.ext_handle_gist_output});
 };
 
-setTimeout(function() {
-    if ( !IPython.toolbar ) {
-        return;
-    }
-    if ($("#gist_notebook").length == 0) {
-        IPython.toolbar.add_buttons_group([
-            {
-                'label'   : 'Share Notebook as gist',
-                'icon'    : 'icon-share',
-                'callback': IPython.ext_gist_notebook,
-                'id'      : 'gist_notebook'
-            },
-        ])
-    }
-
+$([IPython.events]).on('notebook_loaded.Notebook', function() {
     if (IPython.notebook.metadata.gist_id) {
         IPython.ext_update_gist_link(IPython.notebook.metadata.gist_id);
-    }
-}, 1000);
+    };
+});
 
+$([IPython.events]).on('app_initialized.NotebookApp', function(){
+
+    IPython.toolbar.add_buttons_group([
+        {
+            'label'   : 'Share Notebook as gist',
+            'icon'    : 'icon-share',
+            'callback': IPython.ext_gist_notebook,
+            'id'      : 'gist_notebook'
+        },
+    ]);
+});
