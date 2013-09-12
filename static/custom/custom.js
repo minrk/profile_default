@@ -52,6 +52,7 @@ $([IPython.events]).on('notebook_loaded.Notebook', function() {
 });
 
 $([IPython.events]).on('app_initialized.NotebookApp', function(){
+    MathJax.Hub.Config({displayAlign : 'center'});
 
     IPython.toolbar.add_buttons_group([
         {
