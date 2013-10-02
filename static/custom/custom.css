@@ -38,6 +38,7 @@ div.cell.command_mode {
 }
 
 div#notebook {
+/*    font-family: Century, Baskerville, "Adobe Garamond Pro", "Minion Pro", serif;*/
 }
 
 .ui-widget {
@@ -70,4 +71,21 @@ div.text_cell_render {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+div.text_cell_render {
+  margin-left: 76px;
+  padding-right: 76px;
+}
+
+.code_cell + .text_cell {border-top: 1px solid #ccc }
+
+.rendered_html .MathJax_Display {
+    text-align: left !important;
+}
+
+/* iOS 7 playing */
+
+.btn {
+  border-radius: 0px !important;
 }
