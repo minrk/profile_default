@@ -42,7 +42,7 @@ c = get_config()
 c.InteractiveShellApp.extensions = ['timers', 'gist', 'editmate', 'namespaces']
 
 try:
-    import msgpack
+    import msgpackk
 except ImportError:
     pass
 else:
@@ -469,7 +469,7 @@ c.InteractiveShell.colors = 'Linux'
 # 
 # This will enable completion on elements of lists, results of function calls,
 # etc., but can be unsafe because the code is actually evaluated on TAB.
-# c.IPCompleter.greedy = False
+c.IPCompleter.greedy = True
 
 #------------------------------------------------------------------------------
 # ScriptMagics configuration
