@@ -16,9 +16,12 @@ else:
     ctx = zmq.Context.instance()
     def create_bound_pair(type1=zmq.PAIR, type2=zmq.PAIR):
         sa = ctx.socket(type1)
-        p = sa.bind_to_random_port('tcp://127.0.0.1')
+        iface = 'tcp://127.0.0.1'
+        p = sa.bind_to_random_port(iface)
+        url = "%s:%i" % (iface, p)
+        print url
         sb = ctx.socket(type2)
-        sb.connect('tcp://127.0.0.1:%i' % p)
+        sb.connect(url)
         for s in (sa, sb):
             if s.type == zmq.SUB:
                 s.subscribe = b''
