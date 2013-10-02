@@ -499,11 +499,15 @@ import math
 phi = ( 1 + math.sqrt(5) ) / 2
 width = 10.
 
-c.InlineBackend.rc = {
-    'savefig.dpi': 72,
-    'figure.figsize': (width, width / phi),
-    'figure.subplot.bottom': 0.125,
-    # play nicely with white background in the Qt and notebook frontend
-    'figure.facecolor': 'white',
-    'figure.edgecolor': 'white',
-}
+try:
+    c.InlineBackend.rc.update({'figure.figsize' : (width, width / phi)})
+except AttributeError:
+    # pre-2.0
+    c.InlineBackend.rc = {
+        'savefig.dpi': 72,
+        'figure.figsize': (width, width / phi),
+        'figure.subplot.bottom': 0.125,
+        # play nicely with white background in the Qt and notebook frontend
+        'figure.facecolor': 'white',
+        'figure.edgecolor': 'white',
+    }
