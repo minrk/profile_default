@@ -19,7 +19,7 @@ else:
         iface = 'tcp://127.0.0.1'
         p = sa.bind_to_random_port(iface)
         url = "%s:%i" % (iface, p)
-        print url
+        print (url)
         sb = ctx.socket(type2)
         sb.connect(url)
         for s in (sa, sb):
@@ -27,7 +27,9 @@ else:
                 s.subscribe = b''
         return sa, sb
 
-iface = 'tcp://127.0.0.1:5555'
+url = 'tcp://127.0.0.1:5555'
+purl = 'tcp://127.0.0.1:%i'
+localhost = 'tcp://127.0.0.1'
 
 try:
     import numpy as np
