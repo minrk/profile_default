@@ -62,26 +62,28 @@ div.text_cell_render {
 
 .rendered_html h1, .rendered_html h2, .rendered_html h3, .rendered_html h4, .rendered_html h5 {
 /*  line-height: 1em;*/
-  margin-top: 16px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #aaa;
+/*  margin-top: 16px;*/
+/*  margin-bottom: 16px;*/
+  border-bottom: 1px solid #ccc;
 }
 
 .text_cell_render img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*  display: block;*/
 }
 
 div.text_cell_render {
-  margin-left: 76px;
-  padding-right: 76px;
+/*  margin-left: 76px;*/
+/*  padding-right: 76px;*/
 }
 
-.code_cell + .text_cell {border-top: 1px solid #ccc }
+.code_cell + .text_cell {
+/*  border-top: 1px solid #ccc*/
+}
 
 .rendered_html .MathJax_Display {
-    text-align: left !important;
+/*    text-align: left !important;*/
 }
 
 /* iOS 7 playing */
