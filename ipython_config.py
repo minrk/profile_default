@@ -39,7 +39,7 @@ c = get_config()
 
 # A list of dotted module names of IPython extensions to load.
 # c.InteractiveShellApp.extensions = []
-c.InteractiveShellApp.extensions = ['timers', 'gist', 'editmate', 'namespaces']
+c.InteractiveShellApp.extensions = ['timers', 'editmate', 'namespaces']
 
 try:
     import msgpackk
@@ -498,6 +498,8 @@ c.IPCompleter.greedy = True
 import math
 phi = ( 1 + math.sqrt(5) ) / 2
 width = 10.
+
+c.InlineBackend.figure_format = 'retina'
 
 try:
     c.InlineBackend.rc.update({'figure.figsize' : (width, width / phi)})
