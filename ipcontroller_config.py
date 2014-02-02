@@ -294,7 +294,7 @@ c.TaskScheduler.scheme_name = 'lru'
 # latency behind computation, but can result in an imbalance of work when
 # submitting many heterogenous tasks all at once.  Any positive value greater
 # than one is a compromise between the two.
-c.TaskScheduler.hwm = 0
+c.TaskScheduler.hwm = 1
 
 #------------------------------------------------------------------------------
 # HeartMonitor configuration
