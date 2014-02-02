@@ -13,31 +13,26 @@ div.list_item {
 /* the real stuff */
 
 div.cell.selected {
-  border: 1px solid white;
-  border-right: 1px solid rgb(200,210,220);
+  border: 1px solid transparent;
+/*  border-right: 1px solid rgb(200,210,220);*/
   background-image: -webkit-gradient(
     linear,
     left top,
     right top,
-    color-stop(0, rgb(200,210,220)),
-    color-stop(0.5, rgb(255,255,255))
+    color-stop(0, #efefef),
+    color-stop(1, #efefef)
   );
-  background-size: 60px;
+/*  background-size: 25px;*/
+  background-size: 84px;
   background-repeat: repeat-y;
 }
-div.cell.edit_mode {
-  border: 1px solid white;
-  border-right: 1px solid rgb(200,255,220);
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(0, rgb(200,255,220)),
-    color-stop(0.5, rgb(255,255,255))
-  );
-  background-size: 150px;
-  background-repeat: repeat-y;
+div.cell.command_mode div.input_area {
+  background-color: #f4f4f4;
 }
+div.cell.edit_mode div.input_area {
+  background-color: #fff;
+}
+
 div#notebook {
 /*    font-family: Century, Baskerville, "Adobe Garamond Pro", "Minion Pro", serif;*/
 }
