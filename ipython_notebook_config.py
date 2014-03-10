@@ -581,7 +581,7 @@ with open(cookie_secret_file, 'rb') as f:
 #------------------------------------------------------------------------------
 
 # The directory to use for notebooks.
-c.NotebookManager.notebook_dir = os.path.expanduser('~/dev/mine/notebooks')
+c.NotebookManager.notebook_dir = c.NotebookApp.notebook_dir = os.path.expanduser('~/dev/mine/notebooks')
 
 #------------------------------------------------------------------------------
 # FileNotebookManager configuration
