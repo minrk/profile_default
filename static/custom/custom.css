@@ -1,35 +1,47 @@
 /* for presentations
 
-body {
-  font-size: 18px;
+div#menubar-container {
+  width: 100%;
 }
-div.list_item {
-  height: 30px;
+div#menubar div.navbar {
+  margin-bottom: 0px;
 }
-.toolbar select {
-  height: 30px;
+
+div#notebook_panel {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+div#notebook {
+  font-size: 22px;
+  line-height: 1.25em;
+  border-top: 0px;
+  pre {
+    line-height: 1.125em;
+  }
+}
+
+.rendered_html li {
+  line-height: 1.25em;
 }
 
 /* the real stuff */
+div.cell.selected.command_mode .prompt {
+  background-color: #efefef;
+}
+
+div.cell.selected.edit_mode {
+  background-color: #ded;
+}
 
 div.cell.selected {
   border: 1px solid transparent;
-/*  border-right: 1px solid rgb(200,210,220);*/
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(0, #efefef),
-    color-stop(1, #efefef)
-  );
-/*  background-size: 25px;*/
-  background-size: 84px;
-  background-repeat: repeat-y;
 }
-div.cell.command_mode div.input_area {
+div.cell.command_mode div.input_area, div.cell.edit_mode div.text_cell_input {
   background-color: #f4f4f4;
 }
-div.cell.edit_mode div.input_area {
+div.cell.edit_mode div.input_area, div.cell.edit_mode div.text_cell_input {
   background-color: #fff;
 }
 
@@ -60,7 +72,7 @@ div.text_cell_render {
 /*  line-height: 1em;*/
 /*  margin-top: 16px;*/
 /*  margin-bottom: 16px;*/
-  border-bottom: 1px solid #ccc;
+/*  border-bottom: 1px solid #ccc;*/
 }
 
 .text_cell_render img {
