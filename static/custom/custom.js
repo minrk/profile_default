@@ -17,3 +17,9 @@ $([IPython.events]).on("app_initialized.NotebookApp", function () {
     // $('div#header').hide();
     // $('div#maintoolbar').hide();
 });
+
+if (IPython.CodeCell) {
+    IPython.CodeCell.options_default.cm_config.autoCloseBrackets = false;
+}
+
+IPython.security.sanitize_html = function (html) { return html; };
