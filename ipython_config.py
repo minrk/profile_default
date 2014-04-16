@@ -225,9 +225,13 @@ except AttributeError:
     # IPython < 2.0
     info = {'commit_hash': 'old'}
 
-c.TerminalInteractiveShell.banner1 = '\n'.join([
+c.InteractiveShell.banner1 = '\n'.join([
     "Python %s (%s)" % (sys.version.split()[0], sys.executable),
     "IPython %s@%s" % (IPython.__version__, info['commit_hash']),
+    ""
+])
+c.ZMQTerminalInteractiveShell.banner1 = '\n'.join([
+    "IPython console %s@%s" % (IPython.__version__, info['commit_hash']),
     ""
 ])
 # c.TerminalInteractiveShell.banner1 = 'Python 2.7.2 (default, Jun 16 2012, 12:38:40) \nType "copyright", "credits" or "license" for more information.\n\nIPython 1.0.dev -- An enhanced Interactive Python.\n?         -> Introduction and overview of IPython\'s features.\n%quickref -> Quick reference.\nhelp      -> Python\'s own help system.\nobject?   -> Details about \'object\', use \'object??\' for extra details.\n'
