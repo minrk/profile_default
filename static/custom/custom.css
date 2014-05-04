@@ -27,6 +27,26 @@ div#notebook {
 }
 
 /* the real stuff */
+
+/* disable pager
+  only use this if you have also disabled the pager in Python,
+  (`%load_ext print_page` from github.com/minrk/ipython_extensions)
+  or never use ? or ??
+*/
+
+div#pager_splitter {
+  display: none;
+  height: 0px;
+}
+div#pager {
+  display: none;
+}
+
+.command_mode_icon:before {
+    /* command-mode jet, thanks Paul! */
+    content: "\f0fb";
+}
+
 div.cell.selected.command_mode .prompt {
   background-color: #efefef;
 }

@@ -19,7 +19,5 @@ $([IPython.events]).on("app_initialized.NotebookApp", function () {
 });
 
 if (IPython.CodeCell) {
-    IPython.CodeCell.options_default.cm_config.autoCloseBrackets = false;
+      IPython.CodeCell.options_default.cm_config.lineWrapping = true;
 }
-
-IPython.security.sanitize_html = function (html) { return html; };
