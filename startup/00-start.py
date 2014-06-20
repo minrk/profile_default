@@ -2,8 +2,12 @@ import sys,os,shutil,time
 import warnings
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
-    import pkg_resources
-    del pkg_resources
+    try:
+        import pkg_resources
+    except ImportError:
+        pass
+    else:
+        del pkg_resources
 
 ip = get_ipython()
 from IPython.config.application import Application
