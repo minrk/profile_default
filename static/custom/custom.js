@@ -10,16 +10,17 @@ require([
                 setTimeout(load, 100);
                 return;
             }
-            console.log('...load');
             var events = $([IPython.events]);
+            // load the gist and toc extensions
             IPython.load_extensions("gist", "toc", "celltags");
+            
             events.on("app_initialized.NotebookApp", function () {
                 IPython.CodeCell.options_default.cm_config.lineWrapping = true;
                 // autoscroll is my greatest shame:
                 IPython.OutputArea.auto_scroll_threshold = 0;
             
                 // hide cell toolbar select, I never use it
-                // $('#ctb_select').hide().prev().hide();
+                $('#ctb_select').hide().prev().hide();
             
                 // when doing presentations, I hide the header and toolbar
                 // $('div#header').hide();
@@ -27,7 +28,6 @@ require([
             });
         
             events.on("notebook_loaded.Notebook", function () {
-                // load the gist and toc extensions
                 // autosave every 30 seconds;
                 IPython.notebook.minimum_autosave_interval = 30000;
             });
