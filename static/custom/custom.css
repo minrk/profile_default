@@ -59,7 +59,7 @@ div.cell.selected div.inner_cell {
 }
 
 .command_mode div.cell {
-  border: 1px solid transparent;
+/*  border: 1px solid transparent;*/
 }
 
 div.cell.selected.command_mode .prompt, .command_mode div.cell.selected .prompt {
@@ -70,8 +70,8 @@ div.cell.selected.edit_mode, .edit_mode div.cell.selected {
   background-color: #ded;
 }
 
-div.cell.selected {
-  border: 1px solid transparent;
+div.cell {
+/*  border: 1px solid transparent !important;*/
 }
 
 .command_mode div.cell div.input_area, div.cell.edit_mode div.text_cell_input {
