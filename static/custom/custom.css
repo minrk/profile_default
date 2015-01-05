@@ -47,21 +47,37 @@ div#pager {
     content: "\f0fb";
 }
 
-div.cell.selected.command_mode .prompt {
+div.cell {
+  padding-right: 15ex;
+}
+div.cell.selected {
   background-color: #efefef;
 }
 
-div.cell.selected.edit_mode {
+div.cell.selected div.inner_cell {
+  background-color: #fff;
+}
+
+.command_mode div.cell {
+  border: 1px solid transparent;
+}
+
+div.cell.selected.command_mode .prompt, .command_mode div.cell.selected .prompt {
+/*  background-color: #efefef;*/
+}
+
+div.cell.selected.edit_mode, .edit_mode div.cell.selected {
   background-color: #ded;
 }
 
 div.cell.selected {
   border: 1px solid transparent;
 }
-div.cell.command_mode div.input_area, div.cell.edit_mode div.text_cell_input {
+
+.command_mode div.cell div.input_area, div.cell.edit_mode div.text_cell_input {
   background-color: #f4f4f4;
 }
-div.cell.edit_mode div.input_area, div.cell.edit_mode div.text_cell_input {
+.edit_mode, div.cell div.input_area, div.cell.edit_mode div.text_cell_input {
   background-color: #fff;
 }
 
@@ -82,6 +98,7 @@ body {
 
 div.CodeMirror {
   font-family: "Source Code Pro", source-code-pro, "Anonymous Pro", Consolas, Inconsolata, monospace;
+/*  background-color: white;*/
 }
 
 div.text_cell_render {
@@ -118,4 +135,36 @@ div.text_cell_render {
 
 .btn {
   border-radius: 0px !important;
+}
+
+body.notebook-body {
+  background-color: #aaa;
+}
+
+div#header {
+/*  background: none;*/
+}
+
+div#header-container {
+  background-color: white;
+  border-radius: 0px 0px 4px 4px;
+}
+div#textedit-container {
+/*  background-color: white;*/
+}
+div#notebook-container {
+  background-color: white;
+  box-shadow: 0px 8px 24px #555;
+  padding-top: 15ex;
+/*  padding: 15ex 15ex 15ex 0px;*/
+/*  padding-top: 48px;*/
+/*  padding-right: 48px;*/
+}
+@media (min-width: 992px) {
+  div#notebook-container {
+    width: 800px;
+  }
+}
+div.header-bar {
+/*  display: none;*/
 }
