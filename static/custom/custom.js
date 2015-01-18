@@ -11,7 +11,9 @@ $([IPython.events]).on("app_initialized.NotebookApp", function () {
     
     // I have special CSS that only applies to the notebook
     $('body').addClass('notebook-body');
-    // hide cell toolbar select, I never use it
+    
+    // hide cell toolbar and cell type select, I never use it
+    $('#cell_type').hide();
     $('#ctb_select').hide().prev().hide();
     // $('div#header').hide();
     // $('div#maintoolbar').hide();
