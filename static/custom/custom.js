@@ -1,4 +1,10 @@
 // autosave every 30 seconds;
+require(['notebook/js/cell', 'codemirror/keymap/sublime'], function (cell) {
+    cell.Cell.options_default.cm_config.keyMap = 'sublime';
+});
+
+require(['base/js/namespace'], function () {
+    
 $([IPython.events]).on("notebook_loaded.Notebook", function () {
     IPython.notebook.default_cell_type = 'above';
     IPython.notebook.minimum_autosave_interval = 30000;
@@ -22,4 +28,4 @@ $([IPython.events]).on("app_initialized.NotebookApp", function () {
     // autoscroll is my greatest shame:
     IPython.OutputArea.auto_scroll_threshold = 0;
 });
-
+});
