@@ -51,7 +51,7 @@ div.cell {
   padding-right: 15ex;
 }
 div.cell.selected {
-  background-color: #efefef;
+/*  background-color: #efefef;*/
 }
 
 div.cell.selected div.inner_cell {
@@ -160,9 +160,9 @@ div#notebook-container {
 /*  padding-top: 48px;*/
 /*  padding-right: 48px;*/
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   div#notebook-container {
-    width: 800px;
+    width: 940px;
   }
 }
 div.header-bar {
