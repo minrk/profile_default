@@ -6,3 +6,5 @@ log
 security
 history.sqlite
 tasks.db
+cookie_secret
+startup/README
