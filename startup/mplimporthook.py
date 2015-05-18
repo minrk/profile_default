@@ -35,4 +35,4 @@ class MatplotlibFinder(object):
             ip.enable_matplotlib()
 
 
-sys.meta_path.append(MatplotlibFinder())
+sys.meta_path.insert(0, MatplotlibFinder())
