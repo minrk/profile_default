@@ -12,12 +12,15 @@ class MatplotlibFinder(object):
     
     This avoids IPython hanging if `%matplotlib` is omitted
     """
-    
+    _called = False
     def find_module(self, fullname, path=None):
+        if self._called:
+            return
+        # return
         if fullname != 'matplotlib.pyplot':
             return
         # Don't call me again
-        sys.meta_path.remove(self)
+        self._called = True
         
         ip = get_ipython()
         if ip is None:
