@@ -9,6 +9,11 @@ with warnings.catch_warnings():
     else:
         del pkg_resources
 
+if 'zmq' in sys.modules:
+    # set 80 columns for non-terminal IPython
+    # avoids super-wide ls/pager output in notebook
+    os.environ['COLUMNS'] = '80'
+
 ip = get_ipython()
 from IPython.config.application import Application
 app = Application.initialized() and Application.instance()
