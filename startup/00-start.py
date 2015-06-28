@@ -15,8 +15,9 @@ if 'zmq' in sys.modules:
     os.environ['COLUMNS'] = '80'
 
 ip = get_ipython()
-from IPython.config.application import Application
-app = Application.initialized() and Application.instance()
+for cls in ip.__class__.mro():
+    if cls.__name__ == 'Application':
+        app = cls.initialized() and cls.instance()
 
 try:
     import zmq
