@@ -17,7 +17,7 @@ class MatplotlibFinder(object):
         if self._called:
             return
         # return
-        if fullname != 'matplotlib.pyplot':
+        if fullname not in ('pylab', 'matplotlib.pyplot'):
             return
         # Don't call me again
         self._called = True
