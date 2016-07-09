@@ -21,6 +21,10 @@ class MatplotlibFinder(object):
             return
         # Don't call me again
         self._called = True
+        try:
+            sys.meta_path.remove(self)
+        except ValueError:
+            pass
         
         ip = get_ipython()
         if ip is None:
